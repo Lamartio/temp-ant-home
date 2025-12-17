@@ -1,5 +1,5 @@
 {
-  "name": "ant-home-2",
+  "name": "ant-home",
   "type": "module",
   "private": true,
   "scripts": {
@@ -10,9 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.2.81",
     "@nuxt/image": "2.0.0",
     "@nuxt/ui": "4.3.0",
     "nuxt": "^4.2.2",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
     "vue": "^3.5.25",
     "vue-router": "^4.6.4"

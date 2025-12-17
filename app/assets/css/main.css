@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/fonts/Acumin Pro Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/fonts/Acumin Pro Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Acumin Pro', ui-sans-serif, system-ui, sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #125CFF 0%, #1697F6 50%, #85FFCD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
