@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'ANT is the online platform for data-driven collaboration in infrastructure design and construction projects.' }
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }
+        { rel: 'icon', type: 'image/svg+xml', href: '/ant_logo_flat_cropped.png' }
       ]
     }
   }

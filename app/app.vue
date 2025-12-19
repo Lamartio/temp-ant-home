@@ -5,11 +5,10 @@
       <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200/50 dark:border-slate-800/50">
         <UContainer>
           <nav class="flex items-center justify-between h-16">
-            <NuxtLink to="/" class="flex items-center gap-2">
-              <div class="w-8 h-8 flex-shrink-0">
-                <img src="/logo.svg" alt="ANT" class="w-full h-full object-contain" />
+            <NuxtLink to="/" class="flex items-center">
+              <div class="w-12 h-12 flex-shrink-0">
+                <img src="/ant_logo_flat_cropped.png" alt="ANT" class="w-full h-full object-contain" />
               </div>
-              <span class="font-bold text-xl tracking-tight">ANT</span>
             </NuxtLink>
 
             <div class="hidden md:flex items-center gap-8">
@@ -276,11 +275,10 @@
         <UContainer>
           <div class="grid md:grid-cols-4 gap-12">
             <div class="md:col-span-2">
-              <div class="flex items-center gap-2 mb-4">
-                <div class="w-8 h-8 flex-shrink-0">
-                  <img src="/logo.svg" alt="ANT" class="w-full h-full object-contain" />
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 flex-shrink-0">
+                  <img src="/ant_logo_flat_cropped.png" alt="ANT" class="w-full h-full object-contain" />
                 </div>
-                <span class="font-bold text-xl">ANT</span>
               </div>
               <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-md mb-6">
                 ANT is the Common Data Environment platform developed by CollaborAll and Witteveen+Bos,
