@@ -232,18 +232,34 @@
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <UCard v-for="project in projects" :key="project.name" class="group overflow-hidden">
-              <div class="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                <UIcon name="i-lucide-construction" class="w-12 h-12 text-slate-400 dark:text-slate-500" />
-              </div>
-              <h3 class="font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{{ project.name }}</h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400">{{ project.description }}</p>
-              <div class="flex flex-wrap gap-2 mt-4">
-                <UBadge v-for="tag in project.tags" :key="tag" variant="soft" color="neutral" size="xs">
-                  {{ tag }}
-                </UBadge>
-              </div>
-            </UCard>
+            <a
+              v-for="project in projects"
+              :key="project.name"
+              :href="project.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block"
+            >
+              <UCard class="group overflow-hidden h-full cursor-pointer hover:shadow-lg transition-shadow">
+                <div class="aspect-video bg-slate-100 dark:bg-slate-800 rounded-lg mb-4 overflow-hidden">
+                  <img
+                    :src="project.image"
+                    :alt="project.name"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 class="font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex items-center gap-2">
+                  {{ project.name }}
+                  <UIcon name="i-lucide-external-link" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">{{ project.description }}</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <UBadge v-for="tag in project.tags" :key="tag" variant="soft" color="neutral" size="xs">
+                    {{ tag }}
+                  </UBadge>
+                </div>
+              </UCard>
+            </a>
           </div>
         </UContainer>
       </section>
@@ -253,18 +269,34 @@
         <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
 
         <UContainer class="relative">
-          <div class="max-w-3xl mx-auto text-center">
+          <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Workflow?</h2>
             <p class="text-lg text-blue-100 mb-10 leading-relaxed">
-              Join the leading infrastructure firms using ANT to deliver projects faster, with fewer errors and better collaboration.
+              Contact our partners for more information about ANT and how it can streamline your infrastructure projects.
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <UButton size="lg" color="white" class="px-8">
-                Schedule a Demo
-              </UButton>
-              <UButton size="lg" variant="outline" class="px-8 text-white border-white/30 hover:bg-white/10">
-                Contact Sales
-              </UButton>
+            <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <a
+                v-for="partner in partners"
+                :key="partner.name"
+                :href="partner.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+              >
+                <div class="h-16 flex items-center justify-center mb-4">
+                  <img
+                    :src="partner.logo"
+                    :alt="partner.name"
+                    :class="['max-h-full max-w-full object-contain', partner.invert ? 'brightness-0 invert' : '']"
+                  />
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">{{ partner.name }}</h3>
+                <p class="text-sm text-blue-100 mb-4">{{ partner.description }}</p>
+                <div class="flex items-center justify-center gap-2 text-white/80 group-hover:text-white transition-colors">
+                  <span class="text-sm font-medium">Learn more</span>
+                  <UIcon name="i-lucide-external-link" class="w-4 h-4" />
+                </div>
+              </a>
             </div>
           </div>
         </UContainer>
@@ -281,17 +313,23 @@
                 </div>
               </div>
               <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-md mb-6">
-                ANT is the Common Data Environment platform developed by CollaborAll and Witteveen+Bos,
+                ANT is the Common Data Environment platform developed by collaborall and Witteveen+Bos,
                 enabling fluid integration of data from BIM, ERP, and EAM systems.
               </p>
               <div class="flex gap-4">
-                <UButton variant="ghost" color="neutral" size="sm" icon="i-lucide-linkedin" />
-                <UButton variant="ghost" color="neutral" size="sm" icon="i-lucide-twitter" />
-                <UButton variant="ghost" color="neutral" size="sm" icon="i-lucide-mail" />
+                <UButton
+                  variant="ghost"
+                  color="neutral"
+                  size="sm"
+                  icon="i-lucide-linkedin"
+                  to="https://www.linkedin.com/company/collaborall/posts/?feedView=all"
+                  target="_blank"
+                />
               </div>
             </div>
 
-            <div>
+            <!-- Product and Company sections hidden for now - remove v-if="false" to re-enable -->
+            <div v-if="false">
               <h4 class="font-semibold mb-4">Product</h4>
               <ul class="space-y-3">
                 <li><a href="#features" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Features</a></li>
@@ -301,7 +339,7 @@
               </ul>
             </div>
 
-            <div>
+            <div v-if="false">
               <h4 class="font-semibold mb-4">Company</h4>
               <ul class="space-y-3">
                 <li><a href="#" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">About</a></li>
@@ -314,7 +352,7 @@
 
           <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-sm text-slate-500 dark:text-slate-400">
-              2025 ANT by CollaborAll & Witteveen+Bos. All rights reserved.
+              2025 ANT by collaborall & Witteveen+Bos. All rights reserved.
             </p>
             <div class="flex items-center gap-2">
               <UBadge variant="soft" color="success" size="xs">
@@ -332,6 +370,9 @@
 </template>
 
 <script setup lang="ts">
+import witteveenBosLogo from '~/assets/witteveen-bos-logo.png'
+import collaborallLogo from '~/assets/collaborall-logo.svg'
+
 const colorMode = useColorMode()
 
 const toggleColorMode = () => {
@@ -403,32 +444,61 @@ const projects = [
   {
     name: 'Lemmer-Delfzijl Waterway',
     description: 'Major waterway infrastructure project with multiple civil structures and complex coordination requirements.',
-    tags: ['Waterways', 'Civil', 'Netherlands']
+    tags: ['Waterways', 'Civil', 'Netherlands'],
+    url: 'https://www.witteveenbos.com/projects/greater-impact-by-working-digitally-with-ant',
+    image: '/cases/lemmer-delfzijl.jpg'
   },
   {
     name: 'ViA15',
     description: 'Highway expansion project connecting A15 and A12 with bridges, tunnels, and interchanges.',
-    tags: ['Highway', 'Bridges', 'Netherlands']
+    tags: ['Highway', 'Bridges', 'Netherlands'],
+    url: 'https://www.witteveenbos.com/projects/greater-impact-by-working-digitally-with-ant',
+    image: '/cases/via15.jpg'
   },
   {
     name: 'Zuidasdok',
     description: 'Major urban development integrating rail, road, and public transport infrastructure.',
-    tags: ['Urban', 'Rail', 'Amsterdam']
+    tags: ['Urban', 'Rail', 'Amsterdam'],
+    url: 'https://www.witteveenbos.com/projects/greater-impact-by-working-digitally-with-ant',
+    image: '/cases/zuidasdok.jpg'
   },
   {
     name: 'Blankenburg Connection',
     description: 'New highway link with the deepest immersed tunnel in the Netherlands.',
-    tags: ['Tunnel', 'Highway', 'Rotterdam']
+    tags: ['Tunnel', 'Highway', 'Rotterdam'],
+    url: 'https://www.witteveenbos.com/projects/greater-impact-by-working-digitally-with-ant',
+    image: '/cases/blankenburg.jpg'
   },
   {
     name: 'Oosterweel Link',
     description: 'Belgium\'s largest infrastructure project closing the Antwerp ring road.',
-    tags: ['Highway', 'Tunnel', 'Belgium']
+    tags: ['Highway', 'Tunnel', 'Belgium'],
+    url: 'https://www.witteveenbos.com/projects/greater-impact-by-working-digitally-with-ant',
+    image: '/cases/oosterweel.jpg'
   },
   {
     name: 'Permit in 1 Day',
     description: 'Digital acceleration initiative for faster building permit processing.',
-    tags: ['Digital', 'Circular', 'Innovation']
+    tags: ['Digital', 'Circular', 'Innovation'],
+    url: 'https://www.digibouw.nl/en/sessie/beginner/vergunning-in-1-dag',
+    image: '/cases/permit-in-1-day.jpg'
+  }
+]
+
+const partners = [
+  {
+    name: 'Witteveen+Bos',
+    description: 'Engineering consultancy specializing in infrastructure and digital solutions.',
+    url: 'https://www.witteveenbos.com/nl/digital-solutions/ant',
+    logo: witteveenBosLogo,
+    invert: false
+  },
+  {
+    name: 'collaborall',
+    description: 'Integration specialists connecting systems for seamless data flow.',
+    url: 'https://collaborall.net/services/integratie/',
+    logo: collaborallLogo,
+    invert: true
   }
 ]
 </script>
