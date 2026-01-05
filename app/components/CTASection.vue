@@ -38,22 +38,19 @@
 </template>
 
 <script setup lang="ts">
-import witteveenBosLogo from '~/assets/witteveen-bos-logo.png'
-import collaborallLogo from '~/assets/collaborall-logo.svg'
-
 const partners = [
   {
     name: 'Witteveen+Bos',
     description: 'Engineering consultancy specializing in infrastructure and digital solutions.',
     url: 'https://www.witteveenbos.com/nl/digital-solutions/ant',
-    logo: witteveenBosLogo,
+    logo: '/witteveen-bos-logo.png',
     invert: false
   },
   {
     name: 'collaborall',
     description: 'Integration specialists connecting systems for seamless data flow.',
     url: 'https://collaborall.net/services/integratie/',
-    logo: collaborallLogo,
+    logo: '/collaborall-logo.svg',
     invert: true
   }
 ]
