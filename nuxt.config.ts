@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     fallback: 'light'
   },
   app: {
+    baseURL: '/temp-ant-home/',
     head: {
       title: 'ANT - Common Data Environment',
       meta: [
