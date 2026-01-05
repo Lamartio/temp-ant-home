@@ -481,7 +481,7 @@ const projects = [
     description: 'Digital acceleration initiative for faster building permit processing.',
     tags: ['Digital', 'Circular', 'Innovation'],
     url: 'https://www.digibouw.nl/en/sessie/beginner/vergunning-in-1-dag',
-    image: '/cases/permit-in-1-day.jpg'
+    image: '/cases/permit-in-1-day.png'
   }
 ]
 
