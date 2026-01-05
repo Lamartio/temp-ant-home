@@ -24,7 +24,7 @@
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <UButton to="#partners" size="lg" color="primary" class="px-8">
-            Meet the Partners
+            Contact our Partners
             <template #trailing>
               <UIcon name="i-lucide-arrow-right" />
             </template>

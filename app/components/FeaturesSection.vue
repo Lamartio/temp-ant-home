@@ -30,6 +30,7 @@
       <div class="max-w-4xl mx-auto">
         <div class="grid md:grid-cols-2 gap-8">
           <div
+              v-if="false"
             v-for="coreFeature in coreFeatures"
             :key="coreFeature.title"
             class="flex items-center gap-6 p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 transition-colors"

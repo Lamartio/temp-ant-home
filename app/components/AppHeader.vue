@@ -2,7 +2,7 @@
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200/50 dark:border-slate-800/50">
     <UContainer>
       <nav class="flex items-center justify-between h-16">
-        <NuxtLink to="/" class="flex items-center">
+        <NuxtLink to="/" class="flex items-center" @click="scrollToTop">
           <div class="w-12 h-12 flex-shrink-0">
             <NuxtImg src="/ant_logo_flat_cropped.png" alt="ANT" class="w-full h-full object-contain" />
           </div>
@@ -37,5 +37,9 @@ const colorMode = useColorMode()
 
 const toggleColorMode = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+}
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 md:py-32 bg-white dark:bg-slate-950">
+  <section id="how-it-works" class="py-20 md:py-32 bg-white dark:bg-slate-950">
     <UContainer>
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="order-2 lg:order-1">
