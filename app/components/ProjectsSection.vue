@@ -20,7 +20,7 @@
         >
           <UCard class="group overflow-hidden h-full cursor-pointer hover:shadow-lg transition-shadow">
             <div class="aspect-video bg-slate-100 dark:bg-slate-800 rounded-lg mb-4 overflow-hidden">
-              <img
+              <NuxtImg
                 :src="project.image"
                 :alt="project.name"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

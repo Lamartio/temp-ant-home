@@ -18,7 +18,7 @@
             class="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
           >
             <div class="h-16 flex items-center justify-center mb-4">
-              <img
+              <NuxtImg
                 :src="partner.logo"
                 :alt="partner.name"
                 :class="['max-h-full max-w-full object-contain', partner.invert ? 'brightness-0 invert' : '']"
